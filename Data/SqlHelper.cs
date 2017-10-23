@@ -7,5 +7,6 @@ namespace BD.Data
 {
     public class SqlHelper
     {
+        ///
     }
 }
