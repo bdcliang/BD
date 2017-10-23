@@ -1,0 +1,116 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{1B90E4A7-C402-49CD-B6D8-82AE44F96ADE}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>BD</RootNamespace>
+    <AssemblyName>BD</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DocumentationFile>bin\Debug\BD.xml</DocumentationFile>
+    <PlatformTarget>x86</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DocumentationFile>bin\Release\BD.xml</DocumentationFile>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>true</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AssemblyOriginatorKeyFile>BD.snk</AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="CoreAudioApi">
+      <HintPath>..\..\..\公司项目2017\类库设计\BoruiSDK汇总\Output\Release\CoreAudioApi.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\..\..\公司项目2017\类库设计\BoruiSDK汇总\Output\Debug\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.SQLite, Version=1.0.62.0, Culture=neutral, PublicKeyToken=db937bc2d44ff139, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>E:\公司日志\常用库文件\Sqlite数据库\SQLiteHelperTestApp (Source) V1.2\bin\Debug\System.Data.SQLite.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Application.cs" />
+    <Compile Include="Core\CoreHelper.cs" />
+    <Compile Include="Data\AccessHelper.cs" />
+    <Compile Include="Data\SqlHelper.cs" />
+    <Compile Include="Data\Sqlite\DataAttribute.cs" />
+    <Compile Include="Data\Sqlite\ModelMetadata.cs" />
+    <Compile Include="Data\Sqlite\SQLiteColumn.cs" />
+    <Compile Include="Data\Sqlite\SQLiteColumnList.cs" />
+    <Compile Include="Data\Sqlite\SQLiteHelper.cs" />
+    <Compile Include="Data\Sqlite\SQLiteTable.cs" />
+    <Compile Include="Data\Sqlite\UtilHelper.cs" />
+    <Compile Include="Drawing\Icon.cs" />
+    <Compile Include="Drawing\Image.cs" />
+    <Compile Include="IO\FileHelper.cs" />
+    <Compile Include="IO\LogHelper.cs" />
+    <Compile Include="IO\SerialPort.cs" />
+    <Compile Include="IO\SerialPortExtension.cs" />
+    <Compile Include="Math\Random.cs" />
+    <Compile Include="Media\SoundPlayer.cs" />
+    <Compile Include="Net\ClientInfo.cs" />
+    <Compile Include="Net\DataReceivedEventArgs.cs" />
+    <Compile Include="Net\DownLoadHelper.cs" />
+    <Compile Include="Net\HttpHelper.cs" />
+    <Compile Include="Net\Multicast.cs" />
+    <Compile Include="Net\TcpClient.cs" />
+    <Compile Include="Net\TcpServer.cs" />
+    <Compile Include="Net\UdpClient.cs" />
+    <Compile Include="Net\UdpServer.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Security\HardLicenseHelper.cs" />
+    <Compile Include="Security\DogKeyHelper.cs" />
+    <Compile Include="Security\DogKeyPWD.cs" />
+    <Compile Include="Security\SoftLicenseHelper.cs" />
+    <Compile Include="Util\GCHelper.cs" />
+    <Compile Include="Util\PrinterHelper.cs" />
+    <Compile Include="Util\ProcessHelper.cs" />
+    <Compile Include="Util\RegistryHelper.cs" />
+    <Compile Include="Util\ScreenCaptureHelper.cs" />
+    <Compile Include="Util\SystemHelper.cs" />
+    <Compile Include="Util\TimeWatcher.cs" />
+    <Compile Include="Xml\XmlSerializarHelper.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="System.Data.SQLite.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="BD.snk" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
