@@ -5,12 +5,12 @@ using System.Runtime.InteropServices;
 // 有关程序集的一般信息由以下
 // 控制。更改这些特性值可修改
 // 与程序集关联的信息。
-[assembly: AssemblyTitle("BD Common SDK")]
-[assembly: AssemblyDescription("Powered by BD.Hamster")]
+[assembly: AssemblyTitle("BD Common SDK .Net3.5")]
+[assembly: AssemblyDescription("Target for winform desktop application")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("BIGD.STUDIO")]
+[assembly: AssemblyCompany("BDCONNECT")]
 [assembly: AssemblyProduct("BD Common SDK")]
-[assembly: AssemblyCopyright("Copyright © BD 2017")]
+[assembly: AssemblyCopyright("Copyright © BD 2018")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
