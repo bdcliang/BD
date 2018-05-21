@@ -22,7 +22,8 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-    <DocumentationFile>bin\Debug\BD.xml</DocumentationFile>
+    <DocumentationFile>
+    </DocumentationFile>
     <PlatformTarget>x86</PlatformTarget>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
@@ -35,30 +36,20 @@
     <DocumentationFile>bin\Release\BD.xml</DocumentationFile>
   </PropertyGroup>
   <PropertyGroup>
-    <SignAssembly>true</SignAssembly>
+    <SignAssembly>false</SignAssembly>
   </PropertyGroup>
   <PropertyGroup>
     <AssemblyOriginatorKeyFile>BD.snk</AssemblyOriginatorKeyFile>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="CoreAudioApi">
-      <HintPath>..\..\..\公司项目2017\类库设计\BoruiSDK汇总\Output\Release\CoreAudioApi.dll</HintPath>
-    </Reference>
-    <Reference Include="Costura, Version=1.6.2.0, Culture=neutral, PublicKeyToken=9919ef960d84173d, processorArchitecture=MSIL">
-      <HintPath>packages\Costura.Fody.1.6.2\lib\portable-net+sl+win+wpa+wp\Costura.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
     <Reference Include="Newtonsoft.Json">
       <HintPath>..\..\..\公司项目2017\类库设计\BoruiSDK汇总\Output\Debug\Newtonsoft.Json.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
-    <Reference Include="System.Data.SQLite, Version=1.0.62.0, Culture=neutral, PublicKeyToken=db937bc2d44ff139, processorArchitecture=x86">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>E:\公司日志\常用库文件\Sqlite数据库\SQLiteHelperTestApp (Source) V1.2\bin\Debug\System.Data.SQLite.dll</HintPath>
-    </Reference>
     <Reference Include="System.Drawing" />
     <Reference Include="System.Management" />
+    <Reference Include="System.Transactions" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -69,6 +60,53 @@
     <Compile Include="API\APIBase.cs" />
     <Compile Include="API\Audio.cs" />
     <Compile Include="API\Boot.cs" />
+    <Compile Include="API\CoreAudioApi\AudioEndpointVolume.cs" />
+    <Compile Include="API\CoreAudioApi\AudioEndpointVolumeCallback.cs" />
+    <Compile Include="API\CoreAudioApi\AudioEndpointVolumeChannel.cs" />
+    <Compile Include="API\CoreAudioApi\AudioEndpointVolumeChannels.cs" />
+    <Compile Include="API\CoreAudioApi\AudioEndpointVolumeNotificationDelegate.cs" />
+    <Compile Include="API\CoreAudioApi\AudioEndpointVolumeStepInformation.cs" />
+    <Compile Include="API\CoreAudioApi\AudioEndPointVolumeVolumeRange.cs" />
+    <Compile Include="API\CoreAudioApi\AudioMeterInformation.cs" />
+    <Compile Include="API\CoreAudioApi\AudioMeterInformationChannels.cs" />
+    <Compile Include="API\CoreAudioApi\AudioSessionControl.cs" />
+    <Compile Include="API\CoreAudioApi\AudioSessionDisconnectReason.cs" />
+    <Compile Include="API\CoreAudioApi\AudioSessionManager.cs" />
+    <Compile Include="API\CoreAudioApi\AudioSessionState.cs" />
+    <Compile Include="API\CoreAudioApi\AudioVolumeNotificationData.cs" />
+    <Compile Include="API\CoreAudioApi\EDataFlow.cs" />
+    <Compile Include="API\CoreAudioApi\EDeviceState.cs" />
+    <Compile Include="API\CoreAudioApi\EEndpointHardwareSupport.cs" />
+    <Compile Include="API\CoreAudioApi\ERole.cs" />
+    <Compile Include="API\CoreAudioApi\Interfaces\AUDIO_VOLUME_NOTIFICATION_DATA.cs" />
+    <Compile Include="API\CoreAudioApi\Interfaces\Blob.cs" />
+    <Compile Include="API\CoreAudioApi\Interfaces\CLSCTX.cs" />
+    <Compile Include="API\CoreAudioApi\Interfaces\EStgmAccess.cs" />
+    <Compile Include="API\CoreAudioApi\Interfaces\IAudioEndpointVolume.cs" />
+    <Compile Include="API\CoreAudioApi\Interfaces\IAudioEndpointVolumeCallback.cs" />
+    <Compile Include="API\CoreAudioApi\Interfaces\IAudioMeterInformation.cs" />
+    <Compile Include="API\CoreAudioApi\Interfaces\IAudioPeakMeter.cs" />
+    <Compile Include="API\CoreAudioApi\Interfaces\IAudioSessionControl2.cs" />
+    <Compile Include="API\CoreAudioApi\Interfaces\IAudioSessionEnumerator.cs" />
+    <Compile Include="API\CoreAudioApi\Interfaces\IAudioSessionEvents.cs" />
+    <Compile Include="API\CoreAudioApi\Interfaces\IAudioSessionManager2.cs" />
+    <Compile Include="API\CoreAudioApi\Interfaces\IMMDevice.cs" />
+    <Compile Include="API\CoreAudioApi\Interfaces\IMMDeviceCollection.cs" />
+    <Compile Include="API\CoreAudioApi\Interfaces\IMMDeviceEnumerator.cs" />
+    <Compile Include="API\CoreAudioApi\Interfaces\IMMEndpoint.cs" />
+    <Compile Include="API\CoreAudioApi\Interfaces\IPropertyStore.cs" />
+    <Compile Include="API\CoreAudioApi\Interfaces\ISimpleAudioVolume.cs" />
+    <Compile Include="API\CoreAudioApi\MMDevice.cs" />
+    <Compile Include="API\CoreAudioApi\MMDeviceCollection.cs" />
+    <Compile Include="API\CoreAudioApi\MMDeviceEnumerator.cs" />
+    <Compile Include="API\CoreAudioApi\PKEY.cs" />
+    <Compile Include="API\CoreAudioApi\PropertyKey.cs" />
+    <Compile Include="API\CoreAudioApi\PropertyStore.cs" />
+    <Compile Include="API\CoreAudioApi\PropertyStoreProperty.cs" />
+    <Compile Include="API\CoreAudioApi\PropVariant.cs" />
+    <Compile Include="API\CoreAudioApi\SessionCollection.cs" />
+    <Compile Include="API\CoreAudioApi\SimpleAudioVolume.cs" />
+    <Compile Include="API\CoreAudioApi\_MMDeviceEnumerator.cs" />
     <Compile Include="API\Mouse.cs" />
     <Compile Include="API\HotKey.cs" />
     <Compile Include="API\Window.cs" />
@@ -77,21 +115,86 @@
     <Compile Include="Core\ObjectExtension.cs" />
     <Compile Include="Data\AccessHelper.cs" />
     <Compile Include="Data\SqlHelper.cs" />
-    <Compile Include="Data\Sqlite\DataAttribute.cs" />
-    <Compile Include="Data\Sqlite\ModelMetadata.cs" />
-    <Compile Include="Data\Sqlite\SQLiteColumn.cs" />
-    <Compile Include="Data\Sqlite\SQLiteColumnList.cs" />
-    <Compile Include="Data\Sqlite\SQLiteHelper.cs" />
-    <Compile Include="Data\Sqlite\SQLiteTable.cs" />
-    <Compile Include="Data\Sqlite\UtilHelper.cs" />
+    <Compile Include="Data\SqliteEx\DataAttribute.cs" />
+    <Compile Include="Data\SqliteEx\ModelMetadata.cs" />
+    <Compile Include="Data\SqliteEx\SQLiteColumn.cs" />
+    <Compile Include="Data\SqliteEx\SQLiteColumnList.cs" />
+    <Compile Include="Data\SqliteEx\SQLiteHelper.cs" />
+    <Compile Include="Data\SqliteEx\SQLiteTable.cs" />
+    <Compile Include="Data\SqliteEx\UtilHelper.cs" />
+    <Compile Include="Data\SQLite\CollationEncodingEnum.cs" />
+    <Compile Include="Data\SQLite\CollationSequence.cs" />
+    <Compile Include="Data\SQLite\CollationTypeEnum.cs" />
+    <Compile Include="Data\SQLite\CommitEventArgs.cs" />
+    <Compile Include="Data\SQLite\FunctionType.cs" />
+    <Compile Include="Data\SQLite\ISQLiteSchemaExtensions.cs" />
+    <Compile Include="Data\SQLite\SQLite3.cs" />
+    <Compile Include="Data\SQLite\SQLite3_UTF16.cs" />
+    <Compile Include="Data\SQLite\SQLiteBase.cs" />
+    <Compile Include="Data\SQLite\SQLiteCallback.cs" />
+    <Compile Include="Data\SQLite\SQLiteCollation.cs" />
+    <Compile Include="Data\SQLite\SQLiteCommand.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Data\SQLite\SQLiteCommandBuilder.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Data\SQLite\SQLiteCommitCallback.cs" />
+    <Compile Include="Data\SQLite\SQLiteCommitHandler.cs" />
+    <Compile Include="Data\SQLite\SQLiteConnection.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Data\SQLite\SQLiteConnectionHandle.cs" />
+    <Compile Include="Data\SQLite\SQLiteConnectionPool.cs" />
+    <Compile Include="Data\SQLite\SQLiteConnectionStringBuilder.cs" />
+    <Compile Include="Data\SQLite\SQLiteConvert.cs" />
+    <Compile Include="Data\SQLite\SQLiteDataAdapter.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Data\SQLite\SQLiteDataReader.cs" />
+    <Compile Include="Data\SQLite\SQLiteDateFormats.cs" />
+    <Compile Include="Data\SQLite\SQLiteEnlistment.cs" />
+    <Compile Include="Data\SQLite\SQLiteErrorCode.cs" />
+    <Compile Include="Data\SQLite\SQLiteException.cs" />
+    <Compile Include="Data\SQLite\SQLiteFactory.cs" />
+    <Compile Include="Data\SQLite\SQLiteFinalCallback.cs" />
+    <Compile Include="Data\SQLite\SQLiteFunction.cs" />
+    <Compile Include="Data\SQLite\SQLiteFunctionAttribute.cs" />
+    <Compile Include="Data\SQLite\SQLiteFunctionEx.cs" />
+    <Compile Include="Data\SQLite\SQLiteJournalModeEnum.cs" />
+    <Compile Include="Data\SQLite\SQLiteKeyReader.cs" />
+    <Compile Include="Data\SQLite\SQLiteMetaDataCollectionNames.cs" />
+    <Compile Include="Data\SQLite\SQLiteOpenFlagsEnum.cs" />
+    <Compile Include="Data\SQLite\SQLiteParameter.cs" />
+    <Compile Include="Data\SQLite\SQLiteParameterCollection.cs" />
+    <Compile Include="Data\SQLite\SQLiteRollbackCallback.cs" />
+    <Compile Include="Data\SQLite\SQLiteStatement.cs" />
+    <Compile Include="Data\SQLite\SQLiteStatementHandle.cs" />
+    <Compile Include="Data\SQLite\SQLiteTransaction.cs" />
+    <Compile Include="Data\SQLite\SQLiteType.cs" />
+    <Compile Include="Data\SQLite\SQLiteTypeNames.cs" />
+    <Compile Include="Data\SQLite\SQLiteUpdateCallback.cs" />
+    <Compile Include="Data\SQLite\SQLiteUpdateEventHandler.cs" />
+    <Compile Include="Data\SQLite\SR.cs" />
+    <Compile Include="Data\SQLite\SynchronizationModes.cs" />
+    <Compile Include="Data\SQLite\TypeAffinity.cs" />
+    <Compile Include="Data\SQLite\UnsafeNativeMethods.cs" />
+    <Compile Include="Data\SQLite\UpdateEventArgs.cs" />
+    <Compile Include="Data\SQLite\UpdateEventType.cs" />
     <Compile Include="Drawing\Icon.cs" />
     <Compile Include="Drawing\Image.cs" />
+    <Compile Include="IOC\DependencyResolver.cs" />
     <Compile Include="IO\FileHelper.cs" />
     <Compile Include="IO\LogHelper.cs" />
     <Compile Include="IO\SerialPort.cs" />
     <Compile Include="IO\SerialPortExtension.cs" />
     <Compile Include="Math\Random.cs" />
     <Compile Include="Media\SoundPlayer.cs" />
+    <Compile Include="Messaging\IExecuteWithObject.cs" />
+    <Compile Include="Messaging\IMessenger.cs" />
+    <Compile Include="Messaging\Messenger.cs" />
+    <Compile Include="Messaging\WeakAction!1.cs" />
+    <Compile Include="Messaging\WeakAction.cs" />
     <Compile Include="Net\ClientInfo.cs" />
     <Compile Include="Net\DataReceivedEventArgs.cs" />
     <Compile Include="Net\DownLoadHelper.cs" />
@@ -103,24 +206,29 @@
     <Compile Include="Net\UdpClient.cs" />
     <Compile Include="Net\UdpServer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Security\HardLicenseHelper.cs" />
+    <Compile Include="Resources\ConfigManager.cs" />
+    <Compile Include="Resources\ResourceManager.cs" />
+    <Compile Include="Security\AESHelper.cs" />
+    <Compile Include="Security\DESHelper.cs" />
+    <Compile Include="Security\DogLicenseHelper.cs" />
     <Compile Include="Security\DogKeyHelper.cs" />
     <Compile Include="Security\DogKeyPWD.cs" />
+    <Compile Include="Security\License.cs" />
+    <Compile Include="Security\MD5Helper.cs" />
+    <Compile Include="Security\SHA1Helper.cs" />
     <Compile Include="Security\SoftLicenseHelper.cs" />
     <Compile Include="Util\GCHelper.cs" />
     <Compile Include="Util\PrinterHelper.cs" />
     <Compile Include="Util\ProcessHelper.cs" />
     <Compile Include="Util\RegistryHelper.cs" />
     <Compile Include="Util\ScreenCaptureHelper.cs" />
-    <Compile Include="Util\SystemHelper.cs" />
     <Compile Include="Util\TimeWatcher.cs" />
-    <Compile Include="Xml\XmlSerializarHelper.cs" />
+    <Compile Include="Xml\XmlHelper.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="CoreAudioApi.dll">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <None Include="FodyWeavers.xml" />
     <Content Include="Newtonsoft.Json.dll">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
@@ -130,19 +238,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="BD.snk" />
-    <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
     <WCFMetadata Include="Connected Services\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
-  <Import Project="packages\Fody.2.0.0\build\portable-net+sl+win+wpa+wp\Fody.targets" Condition="Exists('packages\Fody.2.0.0\build\portable-net+sl+win+wpa+wp\Fody.targets')" />
-  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
-    <PropertyGroup>
-      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
-    </PropertyGroup>
-    <Error Condition="!Exists('packages\Fody.2.0.0\build\portable-net+sl+win+wpa+wp\Fody.targets')" Text="$([System.String]::Format('$(ErrorText)', 'packages\Fody.2.0.0\build\portable-net+sl+win+wpa+wp\Fody.targets'))" />
-    <Error Condition="!Exists('packages\Costura.Fody.1.6.2\build\portable-net+sl+win+wpa+wp\Costura.Fody.targets')" Text="$([System.String]::Format('$(ErrorText)', 'packages\Costura.Fody.1.6.2\build\portable-net+sl+win+wpa+wp\Costura.Fody.targets'))" />
-  </Target>
-  <Import Project="packages\Costura.Fody.1.6.2\build\portable-net+sl+win+wpa+wp\Costura.Fody.targets" Condition="Exists('packages\Costura.Fody.1.6.2\build\portable-net+sl+win+wpa+wp\Costura.Fody.targets')" />
 </Project>

@@ -5,69 +5,36 @@
     using System.Net;
     using System.Net.Sockets;
     using System.Text;
-
     public class UdpClient
     {
-        private System.Net.Sockets.UdpClient udp = null;
-        private IPEndPoint Client;
-        /// <summary>
-        /// Start a listening
-        /// </summary>
-        /// <param name="ableBroadcast">enable broadcast</param>
-        public void Listen(bool ableBroadcast = false)
+
+        private static string HostName;
+        private static List<IPEndPoint> LocalEPs = new List<IPEndPoint>();
+        
+        static UdpClient()
         {
-            try
+            HostName = Dns.GetHostName();
+            foreach (var ipa in Dns.GetHostAddresses(HostName))
             {
-                IPEndPoint localEP = new IPEndPoint(IPAddress.Any, 0);
-                udp = new System.Net.Sockets.UdpClient(localEP);
-                if (ableBroadcast) udp.EnableBroadcast = true;
-                BeginReceive();
-            }
-            catch { }
+                if (ipa.AddressFamily == AddressFamily.InterNetwork)
+                    LocalEPs.Add(new IPEndPoint(ipa,0));
+            } 
         }
-        private void BeginReceive()
+
+        public static List<string> LocalIPs
         {
-            udp.BeginReceive(ar =>
+            get
             {
-                if(ar.IsCompleted)
-                { 
-                try
+                List<string> list = new List<string>();
+                HostName = Dns.GetHostName();
+                foreach (var ipa in Dns.GetHostAddresses(HostName))
                 {
-                    if (udp == null) return;
-                    if (udp.Client == null) return;
-                    byte[] buffer = udp.EndReceive(ar, ref Client);
-                    OnUdpDataInEvent(new List<byte>(buffer), Client);
+                    if (ipa.AddressFamily == AddressFamily.InterNetwork)
+                        list.Add(ipa.ToString());
                 }
-                catch { return; }
-                BeginReceive();
-                }
-            }, null);
-    }
-
-
-        /// <summary>
-        /// Close the Udp Service
-        /// </summary>
-        public void UdpClose()
-        {
-            if (udp != null)
-            { udp.Close(); udp = null; GC.Collect(); }
-
+                return list;
+            }
         }
-        #region  Event handler
-        /// <summary>
-        /// Udp Data Receive Event
-        /// </summary>
-        public event EventHandler<DataReceivedEventArgs> UdpDataInEvent;
-        private void OnUdpDataInEvent(List<byte> data, IPEndPoint ep)
-        {
-            UdpDataInEvent?.Invoke(this, new DataReceivedEventArgs(ep,data));
-        }
-        #endregion
-
-
-
-
         public static bool Send(EndPoint ep, byte[] data)
         {
             try
@@ -110,17 +77,27 @@
         {
             byte[] bytes = enc.GetBytes(data);
             return Send(new IPEndPoint(IPAddress.Parse(ip), port), bytes);
+        }   
+        
+        public static void SendBroadCast(byte[] buffer,int port)
+        {
+            IPEndPoint BroadCastEP = new IPEndPoint(IPAddress.Broadcast, port);
+            foreach (var ep in LocalEPs)
+            {
+                System.Net.Sockets.UdpClient udp = new System.Net.Sockets.UdpClient(ep);
+                udp.EnableBroadcast = true;
+                udp.Send(buffer, buffer.Length, BroadCastEP);
+                udp.Close();
+            }
         }
 
-        public static bool SendMulticast(byte[] data, string ip="224.0.0.122")
-        {
-            return Send(new IPEndPoint(IPAddress.Parse(ip), 4533), data);
-        }
-
-        public static bool SendMulticast(string data, string ip = "224.0.0.122")
-        {
-            byte[] bytes = Encoding.UTF8.GetBytes(data);
-            return SendMulticast(bytes,ip);
+        public static void SendBroadCast(string data,int port,Encoding enc=null)
+        {            
+            if (enc == null)
+                enc = Encoding.UTF8;
+            byte[] buffer;
+            buffer = enc.GetBytes(data);
+            SendBroadCast(buffer,port);
         }
     }
 }

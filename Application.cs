@@ -90,7 +90,7 @@
                 udp.DataReceived += (s, e) => {                   
                     if (e.RecString == "#query#license")
                     {
-                        try { var vali = BD.Security.HardLicenseHelper.Validate();
+                        try { var vali = BD.Security.DogLicenseHelper.Validate();
                             if (vali)
                                 BD.Net.UdpClient.Send(e.IP, 1866, "#license#true");
                             else

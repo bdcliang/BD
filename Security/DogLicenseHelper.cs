@@ -8,7 +8,7 @@ using env = System.Environment;
 /// <summary>
 /// Encrypt DOG License Helper class
 /// </summary>
-public class HardLicenseHelper
+public class DogLicenseHelper
  {
             /// <summary>
             /// 默认的验证,在RELEASE宏模式下有效
