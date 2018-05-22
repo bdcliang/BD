@@ -60,4 +60,17 @@ public static class ObjectExtension
         else
             Console.WriteLine(msg);
     }
+
+    public static void log(this object obj,string filepath, string format, params object[] args)
+    {
+        StringBuilder stringBuilder = new StringBuilder("[" + obj.GetType().ToString() + "]:[" + DateTime.Now + "]:");
+        string mformat = string.Format("{0}{1}", stringBuilder.ToString(), format);
+        var msg = string.Format(mformat, args);
+        string path = filepath;
+        var stream = File.AppendText(path);
+        stream.Write(msg);
+        stream.WriteLine();
+        stream.Flush();
+        stream.Close();
+    }
 }

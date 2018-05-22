@@ -24,7 +24,7 @@
     <WarningLevel>4</WarningLevel>
     <DocumentationFile>
     </DocumentationFile>
-    <PlatformTarget>x86</PlatformTarget>
+    <PlatformTarget>AnyCPU</PlatformTarget>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -42,13 +42,12 @@
     <AssemblyOriginatorKeyFile>BD.snk</AssemblyOriginatorKeyFile>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Newtonsoft.Json">
-      <HintPath>..\..\..\公司项目2017\类库设计\BoruiSDK汇总\Output\Debug\Newtonsoft.Json.dll</HintPath>
-    </Reference>
     <Reference Include="System" />
+    <Reference Include="System.Configuration.Install" />
     <Reference Include="System.Core" />
     <Reference Include="System.Drawing" />
     <Reference Include="System.Management" />
+    <Reference Include="System.ServiceProcess" />
     <Reference Include="System.Transactions" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml.Linq" />
@@ -110,7 +109,6 @@
     <Compile Include="API\Mouse.cs" />
     <Compile Include="API\HotKey.cs" />
     <Compile Include="API\Window.cs" />
-    <Compile Include="Application.cs" />
     <Compile Include="Core\CoreHelper.cs" />
     <Compile Include="Core\ObjectExtension.cs" />
     <Compile Include="Data\AccessHelper.cs" />
@@ -183,6 +181,7 @@
     <Compile Include="Data\SQLite\UpdateEventType.cs" />
     <Compile Include="Drawing\Icon.cs" />
     <Compile Include="Drawing\Image.cs" />
+    <Compile Include="InternalException\ApplicationExceptionHandler.cs" />
     <Compile Include="IOC\DependencyResolver.cs" />
     <Compile Include="IO\FileHelper.cs" />
     <Compile Include="IO\LogHelper.cs" />
@@ -217,6 +216,7 @@
     <Compile Include="Security\MD5Helper.cs" />
     <Compile Include="Security\SHA1Helper.cs" />
     <Compile Include="Security\SoftLicenseHelper.cs" />
+    <Compile Include="Services\ServiceInstaller.cs" />
     <Compile Include="Util\GCHelper.cs" />
     <Compile Include="Util\PrinterHelper.cs" />
     <Compile Include="Util\ProcessHelper.cs" />

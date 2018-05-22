@@ -1,12 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using System.Data;
-using System.Globalization;
-using System.Reflection;
-using System.Data.SQLite;
-namespace BD.Data
+﻿namespace BD.Data
 {
+    using System;
+    using System.Collections.Generic;
+    using System.Text;
+    using System.Data;
+    using System.Globalization;
+    using System.Reflection;
+    using System.Data.SQLite;
     /// <summary>
     /// 列表变量类型
     /// </summary>
@@ -844,8 +844,8 @@ namespace BD.Data
                 }
                 var last = json.Substring(0, json.Length - 1);
                 last += "}";
-                var obj = Newtonsoft.Json.JsonConvert.DeserializeObject<TObject>(last);
-                modelDataCollection.Add(obj);
+                //var obj = Newtonsoft.Json.JsonConvert.DeserializeObject<TObject>(last);
+                //modelDataCollection.Add(obj);
             }
             return modelDataCollection;
         }
