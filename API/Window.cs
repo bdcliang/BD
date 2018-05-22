@@ -114,12 +114,27 @@ namespace BD.API
             catch { return false; }
         }
 
+        /// <summary>
+        /// only can saw from the process
+        /// </summary>
+        /// <param name="form"></param>
         public static void OnlyProcessShow(System.Windows.Forms.Form form)
         {
-            form.Hide();
             form.WindowState = System.Windows.Forms.FormWindowState.Minimized;
             form.ShowInTaskbar = false;
             form.Text = "";
+            form.Hide();
+        }
+        /// <summary>
+        /// restore from the only process see
+        /// </summary>
+        /// <param name="form"></param>
+        public static void RestoreFromOnlyProcessShow(System.Windows.Forms.Form form,string Title="Main")
+        {
+            form.WindowState = System.Windows.Forms.FormWindowState.Normal;
+            form.ShowInTaskbar = true;
+            form.Text = Title;
+            form.Show();
         }
 
     }
