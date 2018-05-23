@@ -109,6 +109,7 @@
     <Compile Include="API\Mouse.cs" />
     <Compile Include="API\HotKey.cs" />
     <Compile Include="API\Window.cs" />
+    <Compile Include="COM\COMHelper.cs" />
     <Compile Include="Core\CoreHelper.cs" />
     <Compile Include="Core\ObjectExtension.cs" />
     <Compile Include="Data\AccessHelper.cs" />
