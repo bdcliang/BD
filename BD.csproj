@@ -108,6 +108,7 @@
     <Compile Include="API\CoreAudioApi\_MMDeviceEnumerator.cs" />
     <Compile Include="API\Mouse.cs" />
     <Compile Include="API\HotKey.cs" />
+    <Compile Include="API\Screen.cs" />
     <Compile Include="API\Window.cs" />
     <Compile Include="COM\COMHelper.cs" />
     <Compile Include="Core\CoreHelper.cs" />
